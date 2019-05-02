@@ -1,0 +1,24 @@
+package rules
+ 
+import com.javainuse.model.PaymentOffer
+rule "Offer for Paytm"
+	when 
+		paymentOfferObject: PaymentOffer(channel=="paytm")
+	then
+		paymentOfferObject.setDiscount(15);
+	end
+rule "Offer for PhonePe"
+	when 
+		paymentOfferObject: PaymentOffer(channel=="phonepe")
+	then
+		paymentOfferObject.setDiscount(25);
+	end
+rule "Offer for GooglePay"
+	when 
+		paymentOfferObject: PaymentOffer(channel=="googlepay")
+	then
+		paymentOfferObject.setDiscount(30);
+	end
+	
+	 
+
